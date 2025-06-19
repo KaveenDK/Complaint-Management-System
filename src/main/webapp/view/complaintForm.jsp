@@ -14,34 +14,101 @@
     }
 %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Submit Complaint</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/script.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a0022 0%, #4b006e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        .glass {
+            background: rgba(40, 20, 60, 0.93);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+            backdrop-filter: blur(12px);
+            border-radius: 2.5rem;
+            color: #f3e8ff;
+            border: 2px solid rgba(162, 28, 175, 0.18);
+            padding: 2.5rem 2rem 2rem 2rem;
+            max-width: 440px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .complaint-icon {
+            font-size: 3rem;
+            color: #fff;
+            background: linear-gradient(135deg, #a21caf 0%, #7c3aed 100%);
+            border-radius: 50%;
+            padding: 0.8rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 4px 24px 0 #a21caf44;
+            display: inline-block;
+        }
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #e9d5ff;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px #a21caf44;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+        .btn-purple {
+            background: linear-gradient(90deg, #7c3aed 0%, #a21caf 100%);
+            color: #fff;
+            border: none;
+            font-weight: 600;
+            border-radius: 2rem;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .btn-purple:hover {
+            background: linear-gradient(90deg, #a21caf 0%, #7c3aed 100%);
+            color: #fff;
+            box-shadow: 0 4px 16px 0 rgba(162,28,175,0.25);
+        }
+        .footer-note {
+            color: #c4b5fd !important;
+            opacity: 0.85;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        @media (max-width: 600px) {
+            .glass {
+                padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-        <span class="navbar-brand">Submit Complaint</span>
-        <span class="text-white">Logged in as <%= user.getFullName() %> | <a href="employeeDashboard.jsp" class="btn btn-sm btn-light">Dashboard</a></span>
-    </div>
-</nav>
-<div class="container mt-4">
-    <form name="complaintForm" action="../ComplaintServlet" method="post" onsubmit="return validateComplaintForm();">
+<div class="glass">
+    <span class="complaint-icon mb-2"><i class="bi bi-chat-dots"></i></span>
+    <div class="form-title">Submit Complaint</div>
+    <form action="<%= request.getContextPath() %>/ComplaintServlet" method="post" onsubmit="return validateComplaintForm();" autocomplete="off">
         <input type="hidden" name="action" value="create">
         <div class="mb-3">
             <label class="form-label">Title</label>
-            <input type="text" name="title" class="form-control" required>
+            <input type="text" name="title" class="form-control" maxlength="100" required>
         </div>
         <div class="mb-3">
             <label class="form-label">Description</label>
-            <textarea name="description" rows="4" class="form-control" required></textarea>
+            <textarea name="description" rows="4" class="form-control" maxlength="500" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit Complaint</button>
+        <button type="submit" class="btn btn-purple w-100">Submit Complaint</button>
     </form>
+    <div class="footer-note text-muted small mt-4">
+        &copy; 2025 Complaint Management System by KaveeN.
+    </div>
 </div>
 </body>
 </html>

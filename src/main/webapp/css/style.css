@@ -1,0 +1,111 @@
+body {
+    background: linear-gradient(135deg, #1a0022 0%, #4b006e 100%);
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.glass {
+    background: rgba(40, 20, 60, 0.93);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+    backdrop-filter: blur(12px);
+    border-radius: 2.5rem;
+    color: #f3e8ff;
+    border: 2px solid rgba(162, 28, 175, 0.18);
+    padding: 2.5rem 2rem 2rem 2rem;
+    max-width: 480px;
+    width: 100%;
+    margin: 2rem auto;
+}
+
+h1, h2, h4, .dashboard-title, .list-title, .form-title, .system-title {
+    color: #e9d5ff;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px #a21caf44;
+}
+
+.footer-note {
+    color: #c4b5fd !important;
+    opacity: 0.85;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn-purple {
+    background: linear-gradient(90deg, #7c3aed 0%, #a21caf 100%);
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    border-radius: 2rem;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn-purple:hover {
+    background: linear-gradient(90deg, #a21caf 0%, #7c3aed 100%);
+    color: #fff;
+    box-shadow: 0 4px 16px 0 rgba(162,28,175,0.25);
+}
+
+.btn-outline-purple {
+    border: 2px solid #a21caf;
+    color: #a21caf;
+    background: transparent;
+    font-weight: 600;
+    border-radius: 2rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline-purple:hover {
+    background: #a21caf;
+    color: #fff;
+}
+
+.table thead th {
+    background: linear-gradient(90deg, #7c3aed 0%, #a21caf 100%) !important;
+    color: #fff !important;
+    border: none;
+}
+
+input[type="text"], input[type="password"], textarea, select, .form-control, .form-select {
+    background: rgba(60, 30, 80, 0.85);
+    color: #f3e8ff;
+    border: 1.5px solid #a21caf;
+    border-radius: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus, .form-control:focus, .form-select:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 0.2rem rgba(124, 58, 237, 0.15);
+    background: rgba(60, 30, 80, 0.98);
+    color: #fff;
+}
+
+.form-label {
+    color: #d8b4fe;
+}
+
+.navbar-dark.bg-dark {
+    background: linear-gradient(90deg, #7c3aed 0%, #a21caf 100%) !important;
+    border-radius: 0 0 1.5rem 1.5rem;
+    box-shadow: 0 4px 24px 0 #a21caf44;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #fff !important;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+    .glass {
+        padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+        max-width: 98vw;
+    }
+    .list-title, .dashboard-title, .form-title, .system-title {
+        font-size: 1.2rem;
+    }
+}
