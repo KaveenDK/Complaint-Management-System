@@ -44,6 +44,16 @@ The application features a modern **Midnight Purple UI**, responsive design, for
 
 ---
 
+## 📸 Video
+
+### 🟣 YouTube Link
+
+Watch the full system demo on YouTube:  
+🎥 [CMS Project 2025 - IJSE 72 Dimantha Kaveen Galle](https://www.youtube.com/watch?v=ts2SuViEZxA)
+
+---
+
+
 ## 💻 Technologies Used
 
 - **Java 21**
